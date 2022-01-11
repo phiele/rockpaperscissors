@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //define function that will randomly return ‘Rock’, ‘Paper’ or ‘Scissors’
+        function computerPlay() {
+            //initialise result
+            let result;
+
+            //random number between 0 and 1
+            let randNum = Math.random();
+            
+            //define conditions for returning ‘Rock’, ‘Paper’ or ‘Scissors’
+            if (randNum >= 0.666) {
+                return result = 'Rock';
+            } else if (randNum < 0.333) {
+                return result = 'Paper';
+            } else {
+                return result = 'Scissors';
+            }
+        }
+
+        //define function that takes the player's choice and compares it to the computer
+        function playRound(playerSelection, computerSelection) {
+            //ask for player input
+            playerSelection = prompt('Rock, Paper or Scissors? Make a choice :)').toLowerCase();
+            
+            //get the computer's choice
+            computerSelection = computerPlay().toLowerCase(); 
+            
+            //initialize message
+            let message;
+
+            //declare a winner
+            if (playerSelection === computerSelection) {
+                message = `${playerSelection} vs. ${computerSelection} ---> It's a tie :|`;
+                console.log(message);
+                return message
+            } else if (playerSelection == 'rock' && computerSelection == 'scissors' || 
+            playerSelection == 'paper' && computerSelection == 'rock' ||
+            playerSelection == 'scissors' && computerSelection == 'paper') {
+                message = `${playerSelection} vs. ${computerSelection} ---> You won this round :)`;
+                console.log(message);
+                return message
+            } else {
+                message = `${playerSelection} vs. ${computerSelection} ---> You lost this round :(`;
+                console.log(message);
+                return message
+            }
+
+        }
+
+        /*
+        //define function to play a 5 round game
+        function game() {
+            //initialize final message and winning rounds
+            let finalMsg;
+            let playerWins = 0;
+            let computerWins = 0;
+
+            //create loop for 5 rounds
+            for (let round = 1; round <= 5; round++) {
+                //get result per round
+                roundResult = playRound()
+                //add up wins if a round was won
+                if (roundResult.includes('won')) {
+                    playerWins = ++playerWins
+                    console.log(`Round ${round}) You: ${playerWins} vs. Machine: ${computerWins}`)
+                } else if (roundResult.includes('lost')) {
+                    computerWins = ++computerWins
+                    console.log(`Round ${round}) You: ${playerWins} vs. Machine: ${computerWins}`)
+                } else {
+                    console.log(`Round ${round}) You: ${playerWins} vs. Machine: ${computerWins}`)
+                }
+            }
+
+            if (playerWins === computerWins) {
+                console.log(`It's a tie. Play another game!`)
+            } else if (playerWins > computerWins) {
+                console.log(`You won the game!!!`)
+            } else {
+                console.log(`You lost, loser!`)
+            }
+        }
+
+        game()
+        */
+        /*
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();   
+        console.log(playRound(playerSelection, computerSelection));
+        */
+
+
+    </script>
+</body>
+</html>
