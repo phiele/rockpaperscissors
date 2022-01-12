@@ -4,100 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
-        //define function that will randomly return ‘Rock’, ‘Paper’ or ‘Scissors’
-        function computerPlay() {
-            //initialise result
-            let result;
+    <div class="header">
+        <h1>Let's play rock paper scissors!</h1>
+    </div>
 
-            //random number between 0 and 1
-            let randNum = Math.random();
-            
-            //define conditions for returning ‘Rock’, ‘Paper’ or ‘Scissors’
-            if (randNum >= 0.666) {
-                return result = 'Rock';
-            } else if (randNum < 0.333) {
-                return result = 'Paper';
-            } else {
-                return result = 'Scissors';
-            }
-        }
+    <div class="main">
+        <div class="buttons">
+            <img class="button" id="rock" src="./buttons/rock.png" alt="Rock" width="200" height="200">
+            <img class="button" id="paper" src="./buttons/paper.png" alt="Paper" width="200" height="200">
+            <img class="button" id="scissors" src="./buttons/scissors.png" alt="Scissors" width="200" height="200">
+        </div>
+        <div class="score">
+            <div class="player">
+                <h2>You:</h2>
+                <h1 class="playerScore">0</h1>
+            </div>
+            <div class="computer">
+                <h2>Computer:</h2>
+                <h1 class="computerScore">0</h1>
+            </div>
+        </div>
+    </div>
+    <div class="results">
+    </div>
 
-        //define function that takes the player's choice and compares it to the computer
-        function playRound(playerSelection, computerSelection) {
-            //ask for player input
-            playerSelection = prompt('Rock, Paper or Scissors? Make a choice :)').toLowerCase();
-            
-            //get the computer's choice
-            computerSelection = computerPlay().toLowerCase(); 
-            
-            //initialize message
-            let message;
-
-            //declare a winner
-            if (playerSelection === computerSelection) {
-                message = `${playerSelection} vs. ${computerSelection} ---> It's a tie :|`;
-                console.log(message);
-                return message
-            } else if (playerSelection == 'rock' && computerSelection == 'scissors' || 
-            playerSelection == 'paper' && computerSelection == 'rock' ||
-            playerSelection == 'scissors' && computerSelection == 'paper') {
-                message = `${playerSelection} vs. ${computerSelection} ---> You won this round :)`;
-                console.log(message);
-                return message
-            } else {
-                message = `${playerSelection} vs. ${computerSelection} ---> You lost this round :(`;
-                console.log(message);
-                return message
-            }
-
-        }
-
-        /*
-        //define function to play a 5 round game
-        function game() {
-            //initialize final message and winning rounds
-            let finalMsg;
-            let playerWins = 0;
-            let computerWins = 0;
-
-            //create loop for 5 rounds
-            for (let round = 1; round <= 5; round++) {
-                //get result per round
-                roundResult = playRound()
-                //add up wins if a round was won
-                if (roundResult.includes('won')) {
-                    playerWins = ++playerWins
-                    console.log(`Round ${round}) You: ${playerWins} vs. Machine: ${computerWins}`)
-                } else if (roundResult.includes('lost')) {
-                    computerWins = ++computerWins
-                    console.log(`Round ${round}) You: ${playerWins} vs. Machine: ${computerWins}`)
-                } else {
-                    console.log(`Round ${round}) You: ${playerWins} vs. Machine: ${computerWins}`)
-                }
-            }
-
-            if (playerWins === computerWins) {
-                console.log(`It's a tie. Play another game!`)
-            } else if (playerWins > computerWins) {
-                console.log(`You won the game!!!`)
-            } else {
-                console.log(`You lost, loser!`)
-            }
-        }
-
-        game()
-        */
-        /*
-        const playerSelection = "rock";
-        const computerSelection = computerPlay();   
-        console.log(playRound(playerSelection, computerSelection));
-        */
-
-
-    </script>
+    <div class="footer">
+        <p>Made by Philipp</p>
+    </div>
 </body>
 </html>

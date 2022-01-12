@@ -1,0 +1,72 @@
+/*
+* {
+    border: 1px solid red;
+}
+*/
+
+html {
+    font-size: 10px;
+    background-color: white; 
+    /*url('./background.jpg') bottom center;
+    background-size: cover;*/
+  }
+  
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+
+
+/*header*/
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 0;
+}
+
+/*main*/
+.main {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0 50px 0;
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 400px 0px 400px;
+}
+
+.player {
+    text-align: center;
+}
+
+.computer {
+    text-align: center;
+}
+
+.results {
+    /*display: flex;
+    flex-direction: column;*/
+    text-align: center;
+}
+
+.reset {
+    text-align: center;
+}
+
+
+/*footer*/
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
