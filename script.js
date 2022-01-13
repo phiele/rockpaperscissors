@@ -39,12 +39,10 @@ function playRound(event) {
     // get the computer's choice
     computerSelection = computerPlay().toLowerCase(); 
     
-    // select result div to append logs at a later stage
+    // select results div to append reset button at a later stage
     const results = document.querySelector('.results');
-    // initialize div to log the rounds
-    const result = document.createElement('div');
-    // add log class to message 
-    result.classList.add('log');
+    // select result div to log the rounds
+    const result = document.querySelector('.result');
 
     // initialize playerScore and computerScore
     const playerScore = document.querySelector('.playerScore')
@@ -57,7 +55,6 @@ function playRound(event) {
             //console.log(message);
             // append results div with current result
             result.textContent = message
-            results.appendChild(result);
             //return message;
         } else if (playerSelection == 'rock' && computerSelection == 'scissors' || 
         playerSelection == 'paper' && computerSelection == 'rock' ||
@@ -66,7 +63,6 @@ function playRound(event) {
             //console.log(message);
             // append results div with current result
             result.textContent = message
-            results.appendChild(result);
             // change playerScore
             playerScore.textContent = parseInt(playerScore.textContent) + 1
             //return message;
@@ -75,14 +71,10 @@ function playRound(event) {
                 const btn = document.createElement('button');
                 btn.classList.add('reset');
                 btn.textContent = 'Play again!';
-                btn.setAttribute('id', 'pinkbox');
-                btn.style.backgroundColor = 'pink';
-                btn.style.border = '1px solid black';
-                btn.style.margin = '10px 0 0 0';
                 results.appendChild(btn);
                 // remove event listener to ignore additional clicks
                 window.removeEventListener('click', playRound);
-                //results.insertAdjacentElement('beforebegin', btn);
+                // refresh page button at the end of the game
                 btn.addEventListener('click', refreshPage);
             }
         } else {
@@ -90,7 +82,6 @@ function playRound(event) {
             //console.log(message);
             // append results div with current result
             result.textContent = message
-            results.appendChild(result);
             // change computerScore
             computerScore.textContent = parseInt(computerScore.textContent) + 1
             //return message;
@@ -99,15 +90,10 @@ function playRound(event) {
                 const btn = document.createElement('button');
                 btn.classList.add('reset');
                 btn.textContent = 'Play again!';
-                btn.setAttribute('id', 'pinkbox');
-                btn.style.backgroundColor = 'pink';
-                btn.style.border = '1px solid black';
-                btn.style.margin = '10px 0 0 0';
                 results.appendChild(btn);
                 // remove event listener to ignore additional clicks
                 window.removeEventListener('click', playRound);
-                //results.insertAdjacentElement('beforebegin', btn);
-                // refresh page bbutton at the end of the game
+                // refresh page button at the end of the game
                 btn.addEventListener('click', refreshPage);
             }
         }

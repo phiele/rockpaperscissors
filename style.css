@@ -5,19 +5,25 @@
 */
 
 html {
-    font-size: 10px;
-    background-color: white; 
+    font-size: 20px;
+    background-color: black; 
     /*url('./background.jpg') bottom center;
     background-size: cover;*/
   }
   
-body,html {
+body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: white;
+    position: relative;
+    min-height: 100vh;
   }
 
-
+/*content-wrapper*/
+.content-wrapper {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
 
 /*header*/
 .header {
@@ -37,6 +43,10 @@ body,html {
     display: flex;
     justify-content: center;
     margin: 0px 0 50px 0;
+}
+
+.button {
+    filter: invert(100%);
 }
 
 .score {
@@ -59,14 +69,25 @@ body,html {
     text-align: center;
 }
 
-.reset {
-    text-align: center;
+.result {
+    margin-bottom: 5px;
 }
 
+.reset {
+    text-align: center;
+    font-family: sans-serif;
+    color: black;
+    font-size: 20px;
+    background-color: white;
+    margin-top: 20px;
+}
 
 /*footer*/
 .footer {
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
-
